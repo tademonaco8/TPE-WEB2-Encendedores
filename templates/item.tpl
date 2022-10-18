@@ -5,14 +5,14 @@
         <h3>{$lighter->producto}</h3>
     </div>
 
-    <span> ${$lighter->precio}</span>
-    <span> Tipo: {$lighter->descripcion_tipo}</span>
-    <span> Recargable con: {$lighter->tipo_gas}</span>
+    <p> ${$lighter->precio}</sppan>
+    <p> Tipo: {$lighter->descripcion_tipo}</p>
+    <p> Recargable con: {$lighter->tipo_gas}</p>
     <p> {$lighter->descripcion} </p>
 
 </aside> 
 <div>
-    <img src="{$lighter->img_url}" alt="{$lighter->producto}">
+    <img class="img_item"src="{$lighter->img_url}" alt="{$lighter->producto}">
 </div>
 
 

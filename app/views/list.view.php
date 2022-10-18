@@ -10,9 +10,10 @@ class ListView{
     public function getUser($user){
         $this->smarty->assign('user', $user);
     }
-    function ShowList($lighters){
+    function ShowList($lighters, $categories){
         $this->smarty->assign('basehref', BASE_URL);
-        $this->smarty->assign('lighters', $lighters); 
+        $this->smarty->assign('lighters', $lighters);
+        $this->smarty->assign('categories', $categories); 
         $this->smarty->display('list.tpl');
     }
     function ShowItem($lighter){
@@ -25,6 +26,12 @@ class ListView{
         $this->smarty->assign('id',$id);
         $this ->smarty->display('adminform.tpl');    
     }
+    function ShowItemsByCategory($categories){
+        $this->smarty->assign('basehref', BASE_URL);
+        $this->smarty->assign('categories', $categories);
+        
+    }
+
 }
 
 

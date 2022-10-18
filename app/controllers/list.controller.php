@@ -16,7 +16,9 @@ class ListController {
      //mostrar la bse de datos de los libros osea los productos 
     public function ShowLighters(){
         $lighters = $this->model->getAllItems();
-        $this-> view->ShowList($lighters);
+        $categories = $this->model->getCategories();
+        $this-> view->ShowList($lighters, $categories);
+        $this->view->ShowItemsByCategory($categories);
     }
     //añadir libros al carrito    
     function GetLighter($id){
@@ -31,10 +33,10 @@ class ListController {
     //      $this->view->ShowForm($id);
     //   }
     
-    function GetShowLighters(){
-        $lighters = $this->model->getAllItems();
-        $this->view->ShowList($lighters);
-    }
+    // function GetShowLighters(){
+    //     $lighters = $this->model->getAllItems();
+    //     $this->view->ShowList($lighters);
+    // }
       
     
          

@@ -22,6 +22,13 @@ class ListModel {
         return $types;
     }
 
+    public function getCategories(){
+        $query = $this->db->prepare("SELECT DISTINCT `descripcion_tipo` FROM `tipo`");
+        $query->execute();  
+        $categories = $query->fetchAll(PDO::FETCH_OBJ);
+        return $categories;
+    }
+
     public function sortByCategory($category){
         $query = $this->db->prepare("SELECT * FROM `encendedor` WHERE `tipo_FK` = '$category' ");
         $query->execute();
