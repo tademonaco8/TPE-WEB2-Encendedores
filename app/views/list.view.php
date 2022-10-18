@@ -15,8 +15,9 @@ class ListView{
         $this->smarty->assign('lighters', $lighters); 
         $this->smarty->display('list.tpl');
     }
-    function ShowItem(){
+    function ShowItem($lighter){
         $this->smarty->assign('basehref', BASE_URL);
+        $this->smarty->assign('lighter', $lighter);
         $this ->smarty->display('listPage.tpl');
     }
     function ShowForm($id){ 

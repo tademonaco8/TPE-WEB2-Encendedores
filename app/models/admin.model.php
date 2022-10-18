@@ -8,7 +8,7 @@ public function __construct() {
     $this->db = new PDO('mysql:host=localhost;'.'dbname=encendedores;charset=utf8', 'root', '');
 }
 
-public function insertItem($product, $type, $price, $description, $img_url) {
+public function InsertItem($product, $type, $price, $description, $img_url) {
     $query = $this->db->prepare("INSERT INTO encendedor (producto, tipo_FK, precio, descripcion, img_url) VALUES (?, ?, ?, ?, ?)");
     if(!isset($img_url)){
         $query->execute([$product, $type, $price, $description, null]);

@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-18 03:37:49
+/* Smarty version 4.2.1, created on 2022-10-18 05:15:33
   from 'C:\xampp3\htdocs\proyectos\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_634e036d3640b8_05329068',
+  'unifunc' => 'content_634e1a55b2e4b9_48125513',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '01d36f9bbcdba7b94e6babaad005dfb7eb101ce9' => 
     array (
       0 => 'C:\\xampp3\\htdocs\\proyectos\\TPE\\templates\\header.tpl',
-      1 => 1666045444,
+      1 => 1666062932,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_634e036d3640b8_05329068 (Smarty_Internal_Template $_smarty_tpl) {
+function content_634e1a55b2e4b9_48125513 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,7 +29,7 @@ function content_634e036d3640b8_05329068 (Smarty_Internal_Template $_smarty_tpl)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>FuegoAmigo</title>
 </head>
 <body>
@@ -37,10 +37,7 @@ function content_634e036d3640b8_05329068 (Smarty_Internal_Template $_smarty_tpl)
         <nav>
           <ul>
             <li> 
-              <a href="#">Home</a>
-            </li>
-            <li>
-              <a href="productos">Productos</a>
+              <a href="list">Home</a>
             </li>
             <li>
               <a href="admin">Admin</a>

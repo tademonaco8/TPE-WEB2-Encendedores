@@ -28,16 +28,12 @@ switch ($params[0]) {
         $authController = new AuthController();
         $authController->logout();
         break;
-    // case 'home':
-    //     $listController = new ListController();
-    //     $category = $params[1];
-    //     $listController->showByCategory($category);
-    //     break;
+
     case 'list':
         $listController = new ListController();
         $listController->ShowLighters();
         break;
-    case 'item':
+    case 'showItem':
         $itemController = new ItemController();
         $id = $params[1];
         $itemController->GetShowLighter($id);

@@ -12,7 +12,7 @@ class ItemController {
         $this->helper = new AuthHelper();  
         $this->model = new ItemModel();
         $this->view = new ItemView($this->helper->getUser());
-         
+        
      }  
     // //mostrar la bse de datos de los libros osea los productos 
     // public function ShowLighter($id){
@@ -31,8 +31,8 @@ class ItemController {
     //   }
     
     function GetShowLighter($id){
-        $lighterID = $this->model->GetItemById($id);
-        $this->view->ShowItem($lighterID);
+        $lighter = $this->model->GetItemById($id);
+        $this->view->ShowItem($lighter);
     }
 
       

@@ -10,17 +10,10 @@ public function __construct() {
 }
 
 public function GetItemById($id){
-    $query = $this->db->prepare("SELECT * FROM encendedor WHERE id = ?");
+    $query = $this->db->prepare("SELECT * FROM encendedor E LEFT JOIN tipo D ON E.tipo_FK = D.id_tipo WHERE id = ?;");
     $query->execute([$id]);
-    $lighter = $query->fetchAll(PDO::FETCH_OBJ);
+    $lighter = $query->fetch(PDO::FETCH_OBJ);
     return $lighter;
-}
-
-public function GetRelatedItems($category){
-    $query = $this->db->prepare("SELECT producto FROM encendedor WHERE tipo_FK = $category");
-    $query->execute();
-    $related = $query->fetchAll(PDO::FETCH_OBJ);
-    return $related;
 }
 
 }

@@ -5,7 +5,7 @@
 <ul class="list-group">
     {foreach from=$lighters item=$lighter}
         <li>
-            <span> <a href=item/{$lighter->id}><b>{$lighter->producto}</b> - Precio: ${$lighter->precio} </span>
+            <span> <a href=showItem/{$lighter->id}><b>{$lighter->producto}</b> - Precio: ${$lighter->precio} </span>
             <div>
 
             </div>

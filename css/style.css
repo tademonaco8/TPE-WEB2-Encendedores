@@ -1,0 +1,16 @@
+aside {
+    display: flex;
+    width: 30%;
+    float: right;
+    height: 250px;
+}
+
+aside div h3 {
+    font-size: large;
+    font-weight: bold;
+}
+
+div{
+    display: flex;
+    width: 50%;
+}
