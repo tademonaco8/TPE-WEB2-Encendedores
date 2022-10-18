@@ -1,3 +1,8 @@
+*{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: slategray;
+}
+
 nav{
     display: flex;
     justify-content: center;
@@ -22,8 +27,9 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    text-decoration: underline 1px solid gray;
-    color: gray;
+    animation: ease 0.7s;
+    text-decoration: underline 1px solid white;
+    color: white;
 }
 
 .img_item {
@@ -45,6 +51,20 @@ aside ul li, ul li, ul li span a{
     text-decoration: none;
 }
 
+aside ul {
+    margin-right: 5%;
+    display: flex-box;
+    float: top;
+}
+ul{
+    margin: 2% 5%;
+    display: flex-box;
+    float: left;
+}
+ul li {
+    padding: 5px;
+    list-style: square;
+}
 aside div h3 {
     font-size: large;
     font-weight: bold;
