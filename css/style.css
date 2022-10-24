@@ -46,9 +46,15 @@ aside {
 }
 
 aside ul li, ul li, ul li span a{
-    list-style: none;
-    color: black;
-    text-decoration: none;
+    list-style: none !important;
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.category a{
+    list-style: none !important;
+    color: black !important;
+    text-decoration: none !important;
 }
 
 aside ul {
@@ -75,8 +81,16 @@ aside p {
     font-size: larger;
     padding: 3%;
 }
-/* 
-div{
-    display: ;
-    width: 50%;
-} */
+
+.formControl {
+    margin: 10px;
+}
+
+.formLabel {
+    margin: 10px;
+}
+
+h3 {
+    text-align: center;
+    text-decoration: underline double black;
+}

@@ -10,8 +10,9 @@ class AuthView {
     }
 
     function showFormLogin($error=null){
+        $this->smarty->assign('basehref', BASE_URL);
         $this->smarty->assign("error", $error);
-        $this->smarty->display('form.tpl');
+        $this->smarty->display('formLogin.tpl');
     }
 }
 ?>

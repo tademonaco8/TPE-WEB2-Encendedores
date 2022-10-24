@@ -30,7 +30,7 @@ class ListModel {
     }
 
     public function sortByCategory($category){
-        $query = $this->db->prepare("SELECT * FROM `encendedor` WHERE `tipo_FK` = '$category' ");
+        $query = $this->db->prepare("SELECT * FROM `encendedor` WHERE `tipo_FK` = (SELECT `id_tipo` from `tipo` WHERE `descripcion_tipo` = '$category');");
         $query->execute();
         $items = $query->fetchAll(PDO::FETCH_OBJ);
         return $items;

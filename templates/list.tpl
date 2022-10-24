@@ -12,9 +12,10 @@
 
 <aside>
 <ul>
+    <h4>Categorias:</h4>
     {foreach from=$categories item=$category}
-        <li>
-            {$category->descripcion_tipo} 
+        <li class="category">
+            <a href="category/{$category->descripcion_tipo}">{$category->descripcion_tipo} </a>
         </li>
     {/foreach}
 </ul>

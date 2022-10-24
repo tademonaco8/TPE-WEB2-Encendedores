@@ -13,14 +13,21 @@ class ListController {
         $this->model = new ListModel();
         $this->view = new ListView($this->helper->getUser());
     }  
-     //mostrar la bse de datos de los libros osea los productos 
+    
     public function ShowLighters(){
         $lighters = $this->model->getAllItems();
         $categories = $this->model->getCategories();
         $this-> view->ShowList($lighters, $categories);
-        $this->view->ShowItemsByCategory($categories);
+        // $this->view->ShowItemsByCategory($categories);
     }
-    //añadir libros al carrito    
+    
+    public function ShowLightersByCategory($category){
+        $lightersBC = $this->model->sortByCategory($category);
+        $categories = $this->model->getCategories();
+        $this->view->ShowList($lightersBC, $categories);
+        
+    }
+
     function GetLighter($id){
         $lighter = $this->model->GetLighter($id);
         return $lighter;

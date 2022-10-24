@@ -22,7 +22,9 @@ CREATE TABLE `Encendedores`.`Tipo`
 
 --agrego tabla user
 CREATE TABLE `Encendedores`.`User`
-()
+(`user` VARCHAR(40) NOT NULL,
+`password` VARCHAR(255) NOT NULL,
+`email` VARCHAR(40) NOT NULL)
 
 
 -- agrego FK en tipoEncendedor

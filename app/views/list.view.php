@@ -16,21 +16,12 @@ class ListView{
         $this->smarty->assign('categories', $categories); 
         $this->smarty->display('list.tpl');
     }
-    function ShowItem($lighter){
-        $this->smarty->assign('basehref', BASE_URL);
-        $this->smarty->assign('lighter', $lighter);
-        $this ->smarty->display('listPage.tpl');
-    }
     function ShowForm($id){ 
         $this->smarty->assign('basehref', BASE_URL);
         $this->smarty->assign('id',$id);
         $this ->smarty->display('adminform.tpl');    
     }
-    function ShowItemsByCategory($categories){
-        $this->smarty->assign('basehref', BASE_URL);
-        $this->smarty->assign('categories', $categories);
-        
-    }
+    
 
 }
 

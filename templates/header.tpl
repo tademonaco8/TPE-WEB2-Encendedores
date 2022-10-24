@@ -15,9 +15,6 @@
             <li> 
               <a href="list">Home</a>
             </li>
-            <li>
-              <a href="admin">Admin</a>
-            </li>
             {if !isset($smarty.session.USER_ID)}
             <li>
               <a href="login">Login</a>

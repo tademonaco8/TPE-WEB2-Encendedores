@@ -8,9 +8,10 @@ class ItemView {
         $this->smarty = new Smarty(); // inicializo Smarty
     }
 
-    function ShowItem($lighter) {
+    function ShowItem($lighter, $lighters) {
         // asigno variables al tpl smarty
         $this->smarty->assign('base_href', BASE_URL);
+        $this->smarty->assign('lighters', $lighters); 
         $this->smarty->assign('lighter', $lighter); 
         $this->smarty->display('item.tpl');
     }

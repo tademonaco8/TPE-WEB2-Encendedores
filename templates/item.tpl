@@ -14,6 +14,15 @@
 <div>
     <img class="img_item"src="{$lighter->img_url}" alt="{$lighter->producto}">
 </div>
-
+<div>
+    <h3>Lista de items</h3>
+<ul>
+    {foreach from=$lighters item=$lighter}
+        <li>
+            <span> <a href=showItem/{$lighter->id}><b>{$lighter->producto}</b> - Precio: ${$lighter->precio} </a></span>
+        </li>
+    {/foreach}
+</ul>
+</div>
 
 {include file="./footer.tpl" }

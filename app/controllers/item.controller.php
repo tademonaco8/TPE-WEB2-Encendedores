@@ -32,7 +32,8 @@ class ItemController {
     
     function GetShowLighter($id){
         $lighter = $this->model->GetItemById($id);
-        $this->view->ShowItem($lighter);
+        $lighters = $this->model->getAllItems();
+        $this->view->ShowItem($lighter, $lighters);
     }
 
       
