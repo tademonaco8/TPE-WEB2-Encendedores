@@ -9,8 +9,8 @@ class UserModel {
     }
 
     public function getUserByEmail($email) {
-        $query = $this->db->prepare("SELECT * FROM user WHERE email = ?");
-        $query->execute([$email]);
+        $query = $this->db->prepare("SELECT * FROM `user` WHERE `email` = '$email'");
+        $query->execute();
         return $query->fetch(PDO::FETCH_OBJ);
     }
 

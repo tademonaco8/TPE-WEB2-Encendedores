@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-23 23:27:32
+/* Smarty version 4.2.1, created on 2022-10-24 19:06:57
   from 'C:\xampp3\htdocs\proyectos\TPE\templates\formLogin.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_6355b1c41ee889_93779692',
+  'unifunc' => 'content_6356c631729337_14027582',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'b433904fc3f5535df256be01e0f655be264d03b5' => 
     array (
       0 => 'C:\\xampp3\\htdocs\\proyectos\\TPE\\templates\\formLogin.tpl',
-      1 => 1666560437,
+      1 => 1666631205,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:templates/footer.tpl' => 1,
   ),
 ),false)) {
-function content_6355b1c41ee889_93779692 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6356c631729337_14027582 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:templates/header.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
 <!--formulario-->
