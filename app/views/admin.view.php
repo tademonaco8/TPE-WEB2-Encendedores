@@ -15,4 +15,10 @@ class AdminView {
         // mostrar el tpl
         $this->smarty->display('formEditRow.tpl');
     }
+
+    function ShowFormAdd(){
+        $this->smarty->assign('basehref', BASE_URL);
+
+        $this->smarty->display('formAdd.tpl');
+    }
 }

@@ -1,6 +1,6 @@
 {include file="./header.tpl" }
 
-<form action='editItem/{$id}' method="POST">
+<form action='addItem' method="POST">
     <div>
         <label class="form-label">Producto</label>
         <input type="Text" class="form-control" name="product">

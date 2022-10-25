@@ -22,14 +22,12 @@ class AuthController {
         $user = $this->model->getUserByEmail($email);
         // verifico que el usuario existe y que las contraseñas son iguales
         if ($user && $name==$user->user && password_verify($password,$user->password) ) {
-            $_SESSION['USER_ID'] = $user->id;
             $_SESSION['USER_EMAIL'] = $user->email;
-            $_SESSION['USER_NAME'] = $user->name;
+            $_SESSION['USER_NAME'] = $user->user;
             $_SESSION['IS_LOGGED'] = true;
             $_SESSION['IS_ADMIN'] = $user->is_admin;
 
-
-            header("Location: " . BASE_URL."home");
+            header("Location: " . BASE_URL."adminlist");
         } else {
            $this->view->showFormLogin("El usuario o la contraseña no existe.");
         } 

@@ -52,10 +52,27 @@ switch ($params[0]) {
         $id = $params[1];
         $adminController->ShowForm($id);
         break;
+    case 'adminlist':
+        $listController = new ListController();
+        $listController->ShowLightersAdmin();
+        break;    
     case 'edit':
+        $adminController= new AdminController();    
+        $id = $params[1];
+        $adminController->ShowForm($id);
+        break;
+    case 'editItem':
         $adminController= new AdminController();
         $id = $params[1];
         $adminController->Edit($id);
+        break;
+    case 'add':
+        $adminController= new AdminController();
+        $adminController->ShowFormAdd();
+        break;
+    case 'addItem':
+        $adminController= new AdminController();
+        $adminController->AddNewItem();
         break;
     default:
         echo('404 Page not found');

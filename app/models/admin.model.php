@@ -18,8 +18,8 @@ public function InsertItem($product, $type, $price, $description, $img_url) {
 }
 
 public function editItem($id, $product, $type, $price, $description, $img_url){
-    $query = $this->db->prepare("UPDATE encendedor SET `producto` = ?, `tipo_FK`= ?, `precio`=?, `descripcion`=?, `img_url`=? WHERE `encendedor`.`id` = ?");
-    if(isset($img_url)){
+    $query = $this->db->prepare("UPDATE encendedor SET `producto` = '$product', `tipo_FK`= '$type', `precio`= '$price', `descripcion`= '$description', `img_url`= '$img_url' WHERE `id` = '$id'");
+    if($img_url!=""){
         $query->execute([$product, $type, $price, $description, $img_url, $id]);
     }
     $query->execute([$product, $type, $price, $description, null, $id]);
@@ -27,7 +27,7 @@ public function editItem($id, $product, $type, $price, $description, $img_url){
 }
 
 function deleteItemById($id) {
-    $query = $this->db->prepare('DELETE * FROM task WHERE id = ?');
+    $query = $this->db->prepare('DELETE FROM `encendedor` WHERE id = ?');
     $query->execute([$id]);
 }
 }

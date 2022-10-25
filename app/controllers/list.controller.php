@@ -21,6 +21,13 @@ class ListController {
         // $this->view->ShowItemsByCategory($categories);
     }
     
+    public function ShowLightersAdmin(){
+        $lighters = $this->model->getAllItems();
+        $categories = $this->model->getCategories();
+        $this-> view->ShowListAdmin($lighters, $categories);
+        // $this->view->ShowItemsByCategory($categories);
+    }
+
     public function ShowLightersByCategory($category){
         $lightersBC = $this->model->sortByCategory($category);
         $categories = $this->model->getCategories();

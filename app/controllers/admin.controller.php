@@ -11,11 +11,12 @@ class AdminController {
     public function __construct(){
         $this->helper = new AuthHelper();  
         $this->model = new AdminModel();
-        $this->view = new AdminView($this->helper->getUser());
+        $this->view = new AdminView($this->helper->checkLoggedIn());
         
     }
     function deleteItem($id){
         $this->model->deleteItemById($id);
+        header("Location: " . BASE_URL . 'adminlist');
     }
     public function Edit($id){
         //Metodo encargado de editar x producto
@@ -26,11 +27,14 @@ class AdminController {
         $description=$_POST['description'];
         $img_url=$_POST['imgUrl'];
         $this->model->editItem($product, $type, $price, $description, $img_url, $id);
-        header("Location: " . BASE_URL . 'list');
+        header("Location: " . BASE_URL . 'adminlist');
         }
     }
     public function ShowForm($id){
         $this->view->ShowForm($id);
+    }
+    public function ShowFormAdd(){
+        $this->view->ShowFormAdd();
     }
     public function AddNewItem(){
         if((isset ($_POST))&&(!empty ($_POST))){
@@ -40,7 +44,7 @@ class AdminController {
             $description=$_POST['description'];
             $img_url=$_POST['imgUrl'];
             $this->model->InsertItem($product, $type, $price, $description, $img_url);
-            header("Location: " . BASE_URL . 'list');
+            header("Location: " . BASE_URL . 'adminlist');
         }
     }
     
