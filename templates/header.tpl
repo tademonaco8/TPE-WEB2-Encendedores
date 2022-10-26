@@ -19,14 +19,17 @@
             <li> 
               <a href="list">Home</a>
             </li>
+            {if !isset($smarty.session.IS_LOGGED)}
             <li>
               <a href="adminlist">Admin</a>
             </li>
-            {if !isset($smarty.session.IS_LOGGED)}
             <li>
               <a href="login">Login</a>
             </li>
             {else}
+            <li> 
+              <a href="adminlist">Edit rows and categories</a>
+            </li>
             <li>
               <a href="logout">Logout</a>
             </li>

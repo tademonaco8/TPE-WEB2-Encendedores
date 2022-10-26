@@ -24,7 +24,7 @@
         <li class="category">
             <span>
             <a href="category/{$category->id_tipo}">{$category->descripcion_tipo}</a> 
-            <a href="editCat/{$category->id_tipo}"> <button>Editar</button></a> 
+            <a href="showEditCat/{$category->id_tipo}"> <button>Editar</button></a> 
             <a href="deleteCat/{$category->id_tipo}"> <button>Borrar</button></a>
             </span>
         </li>

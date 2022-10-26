@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.2.1, created on 2022-10-26 01:23:22
+/* Smarty version 4.2.1, created on 2022-10-26 03:44:10
   from 'C:\xampp3\htdocs\proyectos\TPE\templates\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.2.1',
-  'unifunc' => 'content_63586fead8eee3_38568688',
+  'unifunc' => 'content_635890ead0f4a0_01784392',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '01d36f9bbcdba7b94e6babaad005dfb7eb101ce9' => 
     array (
       0 => 'C:\\xampp3\\htdocs\\proyectos\\TPE\\templates\\header.tpl',
-      1 => 1666740199,
+      1 => 1666748646,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_63586fead8eee3_38568688 (Smarty_Internal_Template $_smarty_tpl) {
+function content_635890ead0f4a0_01784392 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,14 +43,17 @@ function content_63586fead8eee3_38568688 (Smarty_Internal_Template $_smarty_tpl)
             <li> 
               <a href="list">Home</a>
             </li>
+            <?php if (!(isset($_SESSION['IS_LOGGED']))) {?>
             <li>
               <a href="adminlist">Admin</a>
             </li>
-            <?php if (!(isset($_SESSION['IS_LOGGED']))) {?>
             <li>
               <a href="login">Login</a>
             </li>
             <?php } else { ?>
+            <li> 
+              <a href="adminlist">Edit rows and categories</a>
+            </li>
             <li>
               <a href="logout">Logout</a>
             </li>

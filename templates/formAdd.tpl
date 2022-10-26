@@ -6,8 +6,15 @@
         <input type="Text" class="form-control" name="product">
     </div>
     <div>
-        <label class="form-label">Tipo</label>
-        <input type="Text" class="form-control" name="type">
+    <label class="form-label">Tipo</label>
+    <select name="type">
+        {foreach from=$categories item=$category}
+            <option value= {$category->id_tipo}>
+                {$category->descripcion_tipo}
+            </option>
+        {/foreach}
+    </select>
+</div>
     </div>
     <div>
         <label class="form-label">Descripcion</label>

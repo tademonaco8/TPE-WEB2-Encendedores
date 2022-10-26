@@ -58,7 +58,9 @@ class AdminController {
         $this->view->ShowForm($id, $categories);
     }
     public function ShowFormAdd(){
-        $this->view->ShowFormAdd();
+        $listModel= new ListModel();
+        $categories = $listModel->getCategories();
+        $this->view->ShowFormAdd($categories);
     }
     
     public function ShowFormAddCat(){

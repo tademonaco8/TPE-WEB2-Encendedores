@@ -71,7 +71,12 @@ switch ($params[0]) {
         $id = $params[1];
         $adminController->EditCat($id);
         break;
-    case 'delete':
+    case 'showEditCat':
+        $adminController = new AdminController();
+        $id = $params[1];
+        $adminController->ShowFormAddCat($id);
+        break;
+    case 'deleteCat':
         $adminController = new AdminController();
         $id = $params[1];
         $adminController->deleteCat($id);

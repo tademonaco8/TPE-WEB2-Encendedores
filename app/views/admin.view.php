@@ -23,9 +23,10 @@ class AdminView
         $this->smarty->display('formEditCat.tpl');
     }
 
-    function ShowFormAdd()
+    function ShowFormAdd($categories)
     {
         $this->smarty->assign('basehref', BASE_URL);
+        $this->smarty->assign('categories', $categories);
         $this->smarty->display('formAdd.tpl');
     }
 

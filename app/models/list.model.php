@@ -28,7 +28,7 @@ class ListModel
 
     public function getCategories()
     {
-        $query = $this->db->prepare("SELECT DISTINCT `descripcion_tipo` FROM `tipo`");
+        $query = $this->db->prepare("SELECT * FROM `tipo`");
         $query->execute();
         $categories = $query->fetchAll(PDO::FETCH_OBJ);
         return $categories;

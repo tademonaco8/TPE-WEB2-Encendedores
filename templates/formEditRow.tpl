@@ -7,7 +7,7 @@
     </div>
     <div>
         <label class="form-label">Tipo</label>
-        <select>
+        <select name="type">
             {foreach from=$categories item=$category}
                 <option>
                     {$category->descripcion_tipo}
