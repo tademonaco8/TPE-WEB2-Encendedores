@@ -18,6 +18,10 @@ class AdminController {
         $this->model->deleteItemById($id);
         header("Location: " . BASE_URL . 'adminlist');
     }
+    function deleteCat($id){
+        $this->model->deleteCatById($id);
+        header("Location: " . BASE_URL . 'adminlist');
+    }
     public function Edit($id){
         //Metodo encargado de editar x producto
         if((isset ($_POST))&&(!empty ($_POST))){
@@ -30,11 +34,38 @@ class AdminController {
         header("Location: " . BASE_URL . 'adminlist');
         }
     }
+    public function AddNewCat(){
+        //Metodo encargado de editar x producto
+        if((isset ($_POST))&&(!empty ($_POST))){
+        $description=$_POST['description'];
+        $type=$_POST['type'];
+        $this->model->InsertCat($type, $description);
+        header("Location: " . BASE_URL . 'adminlist');
+        }
+    }
+    public function EditCat($id){
+        //Metodo encargado de editar x producto
+        if((isset ($_POST))&&(!empty ($_POST))){
+        $description=$_POST['description'];
+        $type=$_POST['type'];
+        $this->model->editCat($type, $description, $id);
+        header("Location: " . BASE_URL . 'adminlist');
+        }
+    }
     public function ShowForm($id){
-        $this->view->ShowForm($id);
+        $listModel= new ListModel();
+        $categories = $listModel->getCategories();
+        $this->view->ShowForm($id, $categories);
     }
     public function ShowFormAdd(){
         $this->view->ShowFormAdd();
+    }
+    
+    public function ShowFormAddCat(){
+        $this->view->ShowFormAddCat();
+    }
+    public function ShowFormCat($id){
+        $this->view->ShowFormCat($id);
     }
     public function AddNewItem(){
         if((isset ($_POST))&&(!empty ($_POST))){

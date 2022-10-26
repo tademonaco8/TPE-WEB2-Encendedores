@@ -21,7 +21,7 @@
         <label class="form-label">URL de la imagen</label>
         <input type="Text" class="form-control" name="imgUrl">
     </div>
-    <button type="submit" class="btn" >Submit</button>
+    <button type="submit" class="btn">Submit</button>
 </form>
 
 {include file="./footer.tpl"}

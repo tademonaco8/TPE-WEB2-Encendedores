@@ -1,47 +1,52 @@
 <?php
 
-class ListModel {
+class ListModel
+{
 
     private $db;
 
-    public function __construct() {
-        $this->db = new PDO('mysql:host=localhost;'.'dbname=encendedores;charset=utf8', 'root', '');
+    public function __construct()
+    {
+        $this->db = new PDO('mysql:host=localhost;' . 'dbname=encendedores;charset=utf8', 'root', '');
     }
 
-    public function getAllItems() {
+    public function getAllItems()
+    {
         $query = $this->db->prepare("SELECT * FROM `encendedor`");
         $query->execute();
         $lighters = $query->fetchAll(PDO::FETCH_OBJ);
         return $lighters;
     }
 
-    public function getAllTypes(){
+    public function getAllTypes()
+    {
         $query = $this->db->prepare("SELECT `descripcion_tipo` FROM `tipo`");
-        $query->execute();  
+        $query->execute();
         $types = $query->fetchAll(PDO::FETCH_OBJ);
         return $types;
     }
 
-    public function getCategories(){
+    public function getCategories()
+    {
         $query = $this->db->prepare("SELECT DISTINCT `descripcion_tipo` FROM `tipo`");
-        $query->execute();  
+        $query->execute();
         $categories = $query->fetchAll(PDO::FETCH_OBJ);
         return $categories;
     }
 
-    public function sortByCategory($category){
+    public function sortByCategory($category)
+    {
         $query = $this->db->prepare("SELECT * FROM `encendedor` WHERE `tipo_FK` = (SELECT `id_tipo` from `tipo` WHERE `descripcion_tipo` = '$category');");
         $query->execute();
         $items = $query->fetchAll(PDO::FETCH_OBJ);
         return $items;
     }
 
-    public function GetLighter($id){
+    public function GetLighter($id)
+    {
         $query = $this->db->prepare("SELECT * FROM `encendedor` WHERE 'id' = $id");
         $query->execute();
         $lighter = $query->fetchAll(PDO::FETCH_OBJ);
         return $lighter;
     }
-
-
 }

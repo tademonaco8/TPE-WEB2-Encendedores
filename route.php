@@ -4,13 +4,13 @@ require_once 'app/controllers/auth.controller.php';
 require_once 'app/controllers/item.controller.php';
 require_once 'app/controllers/admin.controller.php';
 
-define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
+define('BASE_URL', '//' . $_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']) . '/');
 
 $action = 'list'; // acción por defecto
 if (!empty($_GET['action'])) {
     $action = $_GET['action'];
-}else{
-    $action='list';
+} else {
+    $action = 'list';
 }
 
 $params = explode('/', $action);
@@ -35,7 +35,7 @@ switch ($params[0]) {
     case 'category':
         $listController = new ListController();
         $category = $params[1];
-        $listController->ShowLightersByCategory($category);  
+        $listController->ShowLightersByCategory($category);
         break;
     case 'showItem':
         $itemController = new ItemController();
@@ -46,35 +46,53 @@ switch ($params[0]) {
         $adminController = new AdminController();
         $id = $params[1];
         $adminController->deleteItem($id);
-        break;  
-    case'form':
-        $adminController= new AdminController();
-        $id = $params[1];
-        $adminController->ShowForm($id);
         break;
+        // case'form':
+        //     $adminController= new AdminController();
+        // $id = $params[1];
+        // $adminController->ShowForm($id);
+        // break;
     case 'adminlist':
         $listController = new ListController();
         $listController->ShowLightersAdmin();
-        break;    
+        break;
     case 'edit':
-        $adminController= new AdminController();    
+        $adminController = new AdminController();
         $id = $params[1];
         $adminController->ShowForm($id);
         break;
     case 'editItem':
-        $adminController= new AdminController();
+        $adminController = new AdminController();
         $id = $params[1];
         $adminController->Edit($id);
         break;
+    case 'editCat':
+        $adminController = new AdminController();
+        $id = $params[1];
+        $adminController->EditCat($id);
+        break;
+    case 'delete':
+        $adminController = new AdminController();
+        $id = $params[1];
+        $adminController->deleteCat($id);
+        break;
     case 'add':
-        $adminController= new AdminController();
+        $adminController = new AdminController();
         $adminController->ShowFormAdd();
         break;
+    case 'addCat':
+        $adminController = new AdminController();
+        $adminController->ShowFormAddCat();
+        break;
     case 'addItem':
-        $adminController= new AdminController();
+        $adminController = new AdminController();
         $adminController->AddNewItem();
         break;
+    case 'addCatToDB':
+        $adminController = new AdminController();
+        $adminController->AddNewCat();
+        break;
     default:
-        echo('404 Page not found');
+        echo ('404 Page not found');
         break;
 }

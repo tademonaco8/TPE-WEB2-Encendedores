@@ -11,14 +11,14 @@
   </div>
   <div>
     <label class="formLabel" for="inputAddress">Name</label>
-    <input class="formControl" type="text" id="inputAddress"name="name">
+    <input class="formControl" type="text" id="inputAddress" name="name">
   </div>
-   
-  {if $error} 
+
+  {if $error}
     <div>
-        {$error}
+      {$error}
     </div>
-    {/if}
+  {/if}
 
 
 

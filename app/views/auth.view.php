@@ -15,4 +15,3 @@ class AuthView {
         $this->smarty->display('formLogin.tpl');
     }
 }
-?>

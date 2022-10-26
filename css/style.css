@@ -1,29 +1,32 @@
-*{
+* {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: slategray;
 }
 
-nav{
+nav {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
-nav ul{
-    display: inline-flex;
-    justify-content: center;
+nav ul {
+    display: flex;
+    align-items: center;
 }
 
-nav ul li{
-    padding: 50px;
+nav ul li {
+    padding: 35px;
     align-items: center;
     justify-content: space-between;
     list-style: none;
 }
 
-nav ul li a {
+nav ul li a,
+nav ul li a img {
     text-decoration: none;
     color: black;
-    font-size: larger;
+    font-size: 35px;
+    transition: ease 0.3s;
+    cursor: pointer;
 }
 
 nav ul li a:hover {
@@ -45,16 +48,21 @@ aside {
     height: 250px;
 }
 
-aside ul li, ul li, ul li span a{
-    list-style: none !important;
-    color: black !important;
-    text-decoration: none !important;
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
 }
 
-.category a{
-    list-style: none !important;
+form ul li,
+ul li,
+ul li span a,
+.category a {
     color: black !important;
     text-decoration: none !important;
+    list-style-image: url('img/icons8-elemento-fuego-24.png');
 }
 
 aside ul {
@@ -62,15 +70,18 @@ aside ul {
     display: flex-box;
     float: top;
 }
-ul{
+
+ul {
     margin: 2% 5%;
     display: flex-box;
     float: left;
 }
+
 ul li {
     padding: 5px;
     list-style: square;
 }
+
 aside div h3 {
     font-size: large;
     font-weight: bold;
@@ -90,27 +101,41 @@ aside p {
     margin: 10px;
 }
 
-h3{
+h3 {
     text-align: center;
     text-decoration: underline double black;
 }
 
-.h1admin{
+.h1admin {
     text-align: center;
 }
 
-.listaItems{
+.listaItems {
     display: block;
     float: left;
     border: 1px black solid;
 }
 
-.itemView{
+.btnAdmin {
+    display: flex;
+    justify-content: center;
+}
+
+.btnAdmin a button {
+    padding: 15px;
+    font-size: larger;
+}
+
+.itemView {
     display: flexbox;
     justify-content: space-between;
 }
 
-.imgContainer{
+.imgContainer {
     display: flex;
     justify-content: center;
+}
+
+.icon {
+    width: 50px;
 }
